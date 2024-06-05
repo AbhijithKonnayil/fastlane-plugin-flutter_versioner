@@ -10,4 +10,5 @@ fastlane/README.md
 fastlane/report.xml
 coverage
 test-results
+#example file for testing
 example/pubspec.yaml
