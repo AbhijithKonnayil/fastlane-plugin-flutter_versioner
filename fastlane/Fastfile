@@ -1,70 +1,75 @@
-#VERSION CODE
-#update the flutter version code by 1 
-#eg 1.1.1+1 -> 1.1.1+2
+# VERSION CODE
+# update the flutter version code by 1
+# eg 1.1.1+1 -> 1.1.1+2
 
 lane :update_version_code do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  version_component:"version_code")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    version_component: "version_code")
 end
 
-#if you dont specify `version_component` version_code will the default value
+# if you dont specify `version_component` version_code will the default value
 lane :update_version_default do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",value:"9"
-  )
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml", value: "9")
 end
 
-#set the flutter version - patch to `value` given 
-#eg 1.1.1+1 -> 1.1.1+100
+# set the flutter version - patch to `value` given
+# eg 1.1.1+1 -> 1.1.1+100
 lane :set_version_code do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  value:"100",
-  version_component:"version_code")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    value: "100",
+                    version_component: "version_code")
 end
-#VERSION - PATCH
-#update the flutter version - patch by 1 
-#eg 1.1.1 -> 1.1.2
+# VERSION - PATCH
+# update the flutter version - patch by 1
+# eg 1.1.1 -> 1.1.2
 
 lane :update_version_patch do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  version_component:"patch")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    version_component: "patch")
 end
 
-#set the flutter version - patch to `value` given 
-#eg 1.1.1 -> 1.1.100
+# set the flutter version - patch to `value` given
+# eg 1.1.1 -> 1.1.100
 lane :set_version_patch do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  value:"100",
-  version_component:"patch")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    value: "100",
+                    version_component: "patch")
 end
 
-#VERSION - MINOR
-#update the flutter version - minor by 1  (also reset patch to 0)
-#eg 1.1.1 -> 1.2.0
+# VERSION - MINOR
+# update the flutter version - minor by 1  (also reset patch to 0)
+# eg 1.1.1 -> 1.2.0
 lane :update_version_minor do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  version_component:"minor")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    version_component: "minor")
 end
 
-#set the flutter version - major to `value` given  (also reset patch to 0)
-#eg 1.1.1 -> 1.100.0
+# set the flutter version - major to `value` given  (also reset patch to 0)
+# eg 1.1.1 -> 1.100.0
 lane :set_version_minor do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  value:"100",
-  version_component:"minor")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    value: "100",
+                    version_component: "minor")
 end
 
-#VERSION - MAJOR
-#update the flutter version - major by 1 (also reset minor and patch)
-#eg 1.1.1 -> 2.0.0
+# VERSION - MAJOR
+# update the flutter version - major by 1 (also reset minor and patch)
+# eg 1.1.1 -> 2.0.0
 lane :update_version_major do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  version_component:"major")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    version_component: "major")
 end
 
-#set the flutter version - major to `value` given (also reset minor and patch)
-#eg 1.1.1 -> 100.0.0
+# set the flutter version - major to `value` given (also reset minor and patch)
+# eg 1.1.1 -> 100.0.0
 lane :set_version_major do
-  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
-  value:"100",
-  version_component:"major")
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    value: "100",
+                    version_component: "major")
+end
+
+# Error
+lane :invalid_version_component do
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    version_component: "invalid_version_component")
 end
