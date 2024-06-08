@@ -1,3 +1,5 @@
 lane :test do
-  flutter_versioner
+  flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
+  value:1000,
+  version_component:"major")
 end
