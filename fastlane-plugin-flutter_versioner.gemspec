@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'iamabhijith.k@gmail.com'
 
   spec.summary       = 'Effortlessly manage and update your flutter project version.'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-flutter_versioner"
+  spec.homepage      = "https://github.com/abhijithkonnayil/fastlane-plugin-flutter_versioner"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
