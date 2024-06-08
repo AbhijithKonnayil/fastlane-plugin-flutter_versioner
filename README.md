@@ -145,3 +145,10 @@ For more information about how the `fastlane` plugin system works, check out the
 ## About _fastlane_
 
 _fastlane_ is the easiest way to automate beta deployments and releases for your iOS and Android apps. To learn more, check out [fastlane.tools](https://fastlane.tools).
+
+## Meet the Team
+
+<b>Abhijith Konnayil</b><br>
+GitHub: [abhijithkonnayil](https://github.com/abhijithkonnayil)<br>
+LinkedIn: [abhijithkonnayil](https://www.linkedin.com/in/abhijithkonnayil)<br>
+Website: [abhijith.web.app](https://abhijith.web.app/)
