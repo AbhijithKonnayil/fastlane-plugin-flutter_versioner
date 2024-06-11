@@ -76,7 +76,7 @@ end
 
 # VERSION NAME
 # update the flutter version code to `value`
-# eg 1.1.1+1 -> 2.3.4
+# eg 1.1.1+1 -> 2.3.4+1
 
 lane :set_verion_name do
   flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
