@@ -73,3 +73,12 @@ lane :invalid_version_component do
   flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
                     version_component: "invalid_version_component")
 end
+# VERSION CODE
+# update the flutter version code by 1
+# eg 1.1.1+1 -> 1.1.1+2
+
+lane :test do
+  flutter_versioner(pubspec_file_path: "./example/pubspec.yaml",
+                    value:"10.0.2",
+                    version_component: "version_name")
+end

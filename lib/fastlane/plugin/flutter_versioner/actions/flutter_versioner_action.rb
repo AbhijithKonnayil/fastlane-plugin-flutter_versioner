@@ -55,6 +55,20 @@ module Fastlane
 
                 elsif ['patch', 'major', 'minor'].include?(version_comp)
                   new_version_name = increment_version_name(old_version_name, version_comp, new_value)
+                elsif version_comp == 'version_name'
+                  puts old_version_name
+                  puts new_value
+                  if matches_version_name_pattern?(new_value)
+                    new_version_name = new_value
+                  else
+                    UI.user_error!("Invalid version name.\n Version name mustbe in the from major.minor.patch (eg 1.2.3)")
+                  end
+                elsif version_comp == 'version'
+                  if matches_version_pattern?(new_value)
+                    new_version_name = new_value
+                  else
+                    UI.user_error!("Invalid version.\n Version mustbe in the from major.minor.patch+build_number (eg 1.2.3+1021)")
+                  end
                 else
                   UI.user_error!("Invalid version component.\nVersion Component must be any one of these -> version_code,  patch, minor,major")
                 end
@@ -82,6 +96,16 @@ module Fastlane
         end
 
         return -1
+      end
+
+      def self.matches_version_pattern?(version)
+        pattern = /^\d+\.\d+\.\d+$/
+        pattern.match?(version.to_s)
+      end
+
+      def self.matches_version_name_pattern?(version)
+        pattern = /^\d+\.\d+\.\d+$/
+        pattern.match?(version.to_s)
       end
 
       def self.get_version_code(line)
@@ -134,7 +158,6 @@ module Fastlane
       end
 
       def self.details
-        # Optional:
         "Flutter versioner is a powerful fastlane plugin designed to simplify the management of flutter project version. With this you can easily update project version to any specified major,minor,or patch level as well as adjust the version code/build number."
       end
 
@@ -156,8 +179,8 @@ module Fastlane
                                        env_name: "FLUTTERVERSIONER_VALUE",
                                        description: "Change to a specific version (optional)",
                                        optional: true,
-                                       type: Integer,
-                                       default_value: -1),
+                                       type: String,
+                                       default_value:nil),
           FastlaneCore::ConfigItem.new(key: :ext_constant_name,
                                        env_name: "FLUTTERVERSIONER_EXT_CONSTANT_NAME",
                                        description: "If the version code is set in an ext constant, specify the constant name (optional)",
