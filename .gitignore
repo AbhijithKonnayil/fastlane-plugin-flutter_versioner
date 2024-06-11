@@ -11,4 +11,5 @@ fastlane/report.xml
 coverage
 test-results
 #example file for testing
+example/
 example/pubspec.yaml
