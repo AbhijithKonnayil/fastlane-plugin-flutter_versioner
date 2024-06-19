@@ -75,7 +75,7 @@ lane :invalid_version_component do
 end
 
 # VERSION NAME
-# update the flutter version code to `value`
+# update the flutter version name to `value`
 # eg 1.1.1+1 -> 2.3.4+1
 
 lane :set_verion_name do
@@ -85,7 +85,7 @@ lane :set_verion_name do
 end
 
 # VERSION
-# update the flutter version code to `value`
+# update the flutter version to `value`
 # eg 1.1.1+1 -> 2.3.4+5
 
 lane :set_version do

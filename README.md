@@ -116,6 +116,28 @@ flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
   version_component:"major")
 ```
 
+### 5. VERSION NAME
+
+#### a. Set the flutter version name to `value` given
+eg 1.1.1+1 -> 2.3.4+1
+
+```
+flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
+  value:"2.3.4",
+  version_component:"version_name")
+```
+
+### 6. VERSION
+
+#### a. Set the flutter version name to `value` given
+eg 1.1.1+1 -> 2.3.4+5
+
+```
+flutter_versioner(pubspec_file_path:"./example/pubspec.yaml",
+  value:"2.3.4+5",
+  version_component:"version")
+```
+
 
 ## Run tests for this plugin
 

@@ -23,6 +23,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.0+2"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("VERSION_CODE")
@@ -44,6 +45,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.0+3"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("VERSION_CODE")
@@ -66,6 +68,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("VERSION_CODE")
@@ -102,6 +105,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.99+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("PATCH")
@@ -123,6 +127,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.100+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("PATCH")
@@ -145,13 +150,11 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.0.101+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("PATCH")
     end
-
-    
-
     it 'should set_version_patch - invalid value ' do
       # Setting up test parameters
       params = {
@@ -184,6 +187,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.99.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MINOR")
@@ -205,6 +209,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.200.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MINOR")
@@ -226,6 +231,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "1.201.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MINOR")
@@ -263,6 +269,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "299.0.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MAJOR")
@@ -285,6 +292,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "300.0.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MAJOR")
@@ -306,6 +314,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "301.0.0+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("MAJOR")
@@ -344,6 +353,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = "#{version_name}+4"
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("VERSION_NAME")
@@ -396,6 +406,7 @@ describe Fastlane::Actions::FlutterVersionerAction do
 
       new_version = version
       expect(Fastlane::UI).to have_received(:success).with("Version has been changed to #{new_version}")
+      expect(result).to eq(new_version)
 
       # Clean up any stubs or mocks
       Fastlane::Actions.lane_context.delete("VERSION")
