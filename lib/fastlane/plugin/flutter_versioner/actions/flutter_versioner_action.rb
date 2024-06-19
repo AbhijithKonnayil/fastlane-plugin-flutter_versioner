@@ -26,7 +26,7 @@ module Fastlane
           UI.user_error!("Updating the version failed !!")
         end
 
-        return new_value
+        return version_list[1]
       end
 
       def self.increment_version(path, new_value, constant_name, version_comp = 'version_code')
